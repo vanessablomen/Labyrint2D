@@ -22,7 +22,7 @@ public class Move : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            transform.position = new Vector2(0, 0);
+            transform.position = new Vector2(-12.1f, 22.5f);
         }
 
         horizontal = Input.GetAxisRaw("Horizontal");
