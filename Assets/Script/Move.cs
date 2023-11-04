@@ -20,9 +20,9 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            transform.position = new Vector2(-12.1f, 22.5f);
+            transform.position = new Vector3(-6f, 5.7f, 6f);
         }
 
         horizontal = Input.GetAxisRaw("Horizontal");
