@@ -18,6 +18,7 @@ public class TextManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scoreText.text =  hearts + "/6 ";
         UpdateScoreText();
     }
 
@@ -26,7 +27,6 @@ public class TextManager : MonoBehaviour
     {
         if (!hasWon)
         {
-            scoreText.text = "Hjärtan: " + hearts.ToString();
 
             if (hearts >= winningScore)
             {
@@ -37,27 +37,27 @@ public class TextManager : MonoBehaviour
 
     public void AddHearts()
     {
-        if (!hasWon)
-        {
+        
+
             hearts++;
             UpdateScoreText();
-        }
+        
     }
 
     void UpdateScoreText()
     {
-        scoreText.text = "Hjärtan: " + hearts.ToString();
+        scoreText.text = hearts + "/6 ";
     }
 
     void UpdateTotalScoreText()
     { 
-        scoreText.text = " / " + winningScore.ToString();
+        scoreText.text = " / " + winningScore;
     }
 
    
     public void PlayerWins()
     {
-        if (!hasWon && exitTrigger.IsPlayerInside())
+        if (!hasWon)
         {
 
             hasWon = true;

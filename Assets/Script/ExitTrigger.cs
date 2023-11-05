@@ -1,27 +1,15 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ExitTrigger : MonoBehaviour
 {
-    private bool playerInside = false;
+    private void OnTriggerEnter2D(Collider2D other)
 
-    public bool IsPlayerInside()
-    {
-        return playerInside;
-    }
 
-    private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if(other.gameObject.tag == "Player") 
         {
-            playerInside = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerInside = false;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
